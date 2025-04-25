@@ -1,4 +1,6 @@
-# VirtuoX Responsive Navbar
+# VirtuoX - AI Assisstant
+
+** Project Link : [ https://virtuo-x.vercel.app/ ]
 
 This project is a **fully responsive navigation bar** built using **HTML, CSS, and JavaScript**. The navbar adapts seamlessly to different screen sizes and includes a **toggle menu (H-menu bar)** for small devices, enhancing user experience. The JavaScript logic efficiently controls the menu's behavior, ensuring smooth transitions and accessibility.
 
