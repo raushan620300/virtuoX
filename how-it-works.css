@@ -1,0 +1,329 @@
+/* How It Works Page Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Background Animation */
+body {
+    position: relative;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(125deg, #000000, #101923, #1a2d3d, #13141f);
+    background-size: 400% 400%;
+    z-index: -1;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animated particles */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    opacity: 0.5;
+    animation: floatParticles 60s linear infinite;
+}
+
+@keyframes floatParticles {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-1000px);
+    }
+}
+
+/* Active link highlighting */
+.nav-links a.active {
+    color: #1a9fff;
+    background: rgba(26, 159, 255, 0.1);
+    font-weight: 600;
+}
+
+/* How It Works Container */
+.hiw-container {
+    max-width: 1200px;
+    margin: 100px auto 50px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(16, 25, 35, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* How It Works Header Section */
+.hiw-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hiw-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: transparent;
+    background: linear-gradient(45deg, #4dff4d, #1a9fff, #9f1aff, #ff4d4d, #ff9f1a, #ffcd1a);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient 5s ease infinite, letterSpacing 3s ease-out forwards;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes letterSpacing {
+    0% {
+        letter-spacing: 0px;
+    }
+    100% {
+        letter-spacing: 10px;
+    }
+}
+
+.underline {
+    height: 5px;
+    width: 0;
+    margin: 10px auto;
+    background: linear-gradient(to right, #4dff4d, #1a9fff);
+    border-radius: 10px;
+    animation: expandWidth 2s ease forwards 0.5s;
+}
+
+@keyframes expandWidth {
+    to {
+        width: 300px;
+    }
+}
+
+/* How It Works Content Section with Flexbox */
+.hiw-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.hiw-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(77, 255, 77, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(77, 255, 77, 0.3);
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.tech-icon {
+    width: 150px;
+    height: 150px;
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 5px rgba(77, 255, 77, 0.5));
+    }
+    to {
+        filter: drop-shadow(0 0 20px rgba(26, 159, 255, 0.8));
+    }
+}
+
+/* How It Works Text Section */
+.hiw-text {
+    flex: 2;
+    min-width: 300px;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideIn 1s ease forwards 1s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hiw-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #4dff4d;
+    position: relative;
+    padding-left: 15px;
+}
+
+.hiw-subtitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 5px;
+    background: linear-gradient(to bottom, #4dff4d, #1a9fff);
+    border-radius: 5px;
+}
+
+.hiw-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+    text-align: justify;
+}
+
+/* Process List */
+.process-list {
+    margin: 20px 0 30px 20px;
+    counter-reset: process-counter;
+}
+
+.process-list li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 40px;
+    color: #e0e0e0;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    list-style-type: none;
+}
+
+.process-list li:nth-child(1) { animation-delay: 1.2s; }
+.process-list li:nth-child(2) { animation-delay: 1.4s; }
+.process-list li:nth-child(3) { animation-delay: 1.6s; }
+.process-list li:nth-child(4) { animation-delay: 1.8s; }
+.process-list li:nth-child(5) { animation-delay: 2.0s; }
+.process-list li:nth-child(6) { animation-delay: 2.2s; }
+
+.process-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4dff4d;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .hiw-container {
+        margin: 80px auto 40px;
+        padding: 20px;
+    }
+    
+    .hiw-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .hiw-title {
+        font-size: 2.5rem;
+    }
+    
+    .hiw-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hiw-paragraph {
+        font-size: 1rem;
+    }
+    
+    .image-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .tech-icon {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .underline {
+        height: 4px;
+    }
+    
+    @keyframes expandWidth {
+        to {
+            width: 200px;
+        }
+    }
+    
+    .hiw-header {
+        margin-bottom: 30px;
+    }
+    
+    .hiw-content {
+        margin-top: 40px;
+    }
+} 
